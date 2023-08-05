@@ -299,7 +299,7 @@ img{
     color: white !important;
 }
 .row__body__active{
-    display: block;
+    display: block !important;
 }
 .row__body{
     display: none;

@@ -39,14 +39,17 @@ clickAuthor.addEventListener('click', function(){
 /* -----------------Nav link ------------------------- */
 
 const navLink = document.querySelectorAll('.nav--link');
+const pageNavLink = document.querySelectorAll('.row__body');
 for(let i = 0; i < navLink.length; i++){
     navLink[i].addEventListener('click', () => {
         const navLinkActive = document.querySelector('.nav--link--active');
-        
+        const pageNavLinkActive = document.querySelector('.row__body__active')
         if(navLinkActive){
             navLinkActive.classList.remove('nav--link--active');
+            pageNavLinkActive.classList.remove('row__body__active')
         }
         navLink[i].classList.add('nav--link--active');
+        pageNavLink[i].classList.add('row__body__active');
         
     })
 }
