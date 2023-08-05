@@ -6,7 +6,14 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+/* Root bootstrap */
+p{
+    margin-bottom: 0rem !important;
+}
+ul{
+    padding-left: 0rem !important;
+}
+/* -------------- */
 :root {
     --mainColor: #89216b;
     --whiteColor: #ffffff;
@@ -36,14 +43,18 @@ html {
     color: var(--greyColor);
     position: relative;
 }
-.container__left__showAll__after{
-    display: none !important;
+.container__left__showAll{
+    width: 250px;
+    background-color: #333333;
+    padding: 0px 20px;
+    position: relative;
 }
 .container__left__showIcon{
+    width: 70px;
+    padding: 0px 10px;
+    background-color: #333333;
+    position: relative;
     display: none;
-}
-.container__left__showIcon__after{
-    display: block !important;
 }
 .showIcon__dashboard__logo{
     height: 60px;
@@ -65,14 +76,8 @@ html {
     color: var(--greyColor);
     font-size: 1.5rem;
 }
-.container__left__after{
-    width: 70px;
-    padding: 0px 10px;
-}
-.container__right__after{
-    width: calc(100% - 70px) !important;
-}
-.btn__show__menu{
+
+.btn__menu{
     position: absolute;
     right: 0px;
     transform: translateX(50%);
@@ -86,7 +91,7 @@ html {
     align-items: center;
     cursor: pointer;
 }
-.btn__show__menu i{
+.btn__menu i{
     font-size: 1.5rem;
     color: white;
 }
@@ -100,6 +105,7 @@ html {
 
 .logo__dashboard {
     font-size: 1.5rem;
+    color: var(--greyColor);
 }
 
 .menu--dashboard {
@@ -132,11 +138,12 @@ html {
 
 .tittel__nav__dashboard p {
     font-size: 1.2rem;
+    color: var(--greyColor);
 }
 
 .container__right {
-    background-color: white;
-    width: calc(100% - 250px);
+    background-color: #F1F2F7;
+   width: 100%;
 }
 
 .heading {
@@ -236,4 +243,64 @@ img{
 .author__list ul li a:hover{
     margin-left: 7px;
     transition: all 0.3s ease;
+}
+
+.dasboard__path{
+    height: 50px;
+    margin-top: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+.dasboard__path p{
+    color: #222529;
+    font-size: 1.2rem;
+}
+.container__dashboard{
+    padding: 20px 20px;
+}
+.dashboard__body{
+    background-color: #B13A42;
+}
+.container__left__mobile{
+    display: none;
+}
+.item__nav__dashboard__mobile{
+    display: flex !important;
+    align-items: center;
+}
+@media screen and (max-width:576px) {
+    .container__left__showAll{
+        display: none !important;
+    }
+    .container__left__showIcon{
+        display: none !important;
+    }
+    .container__left__mobile{
+        display: block;
+    }
+    .dashboard__wrapper{
+        flex-direction: column;
+    }
+}
+
+.logo__nav__mobile{
+    height: 40px;
+}
+.navbar-collapse{
+    margin: 0px 10px;
+}
+.navbar-brand{
+    padding: 10px 0px !important;
+}
+.nav--link--active{
+    color: white !important;
+}
+.row__body__active{
+    display: block;
+}
+.row__body{
+    display: none;
 }
