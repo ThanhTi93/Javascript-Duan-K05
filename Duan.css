@@ -20,7 +20,11 @@ html {
 }
 
 body {
-    background: linear-gradient(to right, #da4453, var(--mainColor));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./image/pexels-photo-2313037.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     font-weight: 400;
     min-height: 100vh;
     display: grid;
@@ -34,8 +38,8 @@ body {
     height: 50rem;
 }
 
-@media(min-width:540px){
-    .wrapper{
+@media(min-width:540px) {
+    .wrapper {
         width: 40rem;
     }
 }
@@ -235,4 +239,3 @@ form .form-group input:valid~i {
 }
 
 /* ------------------------------- End sign in - sign out --------------------------------------*/
-
