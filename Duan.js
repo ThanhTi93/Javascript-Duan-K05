@@ -24,30 +24,50 @@ signInLink.addEventListener('click', () => {
 - Chuyển hướng trang
 */
 
+// document.getElementById('sign-up').addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     var username = document.getElementById('username').value;
+//     var email = document.getElementById('email').value;
+//     var password = document.getElementById('password').value;
+//     var repassword = document.getElementById('repassword').value;
+
+//     if (password !== repassword) {
+//         alert('Mật khẩu không trùng khớp');
+//         return;
+//     }
+
+//     const user = {
+//         username : username,
+//         password : password,
+//         email : email
+//     }
+
+//     const userData = JSON.stringify(user);
+//     localStorage.setItem('user', userData);
+//     alert('Đăng kí thành công');
+//     window.location.href = "dashboard.html"
+// })
+
 document.getElementById('sign-up').addEventListener('submit', (e) => {
     e.preventDefault();
     var username = document.getElementById('username').value;
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var repassword = document.getElementById('repassword').value;
-
-    if (password !== repassword) {
+    if(password !== repassword){
         alert('Mật khẩu không trùng khớp');
-        return;
+        return
     }
-
-    const user = {
-        username : username,
-        password : password,
-        email : email
+    var user = {
+        username: username,
+        email: email,
+        password: password
     }
-
-    const userData = JSON.stringify(user);
+    userData = JSON.stringify(user);
     localStorage.setItem('user', userData);
     alert('Đăng kí thành công');
     window.location.href = "dashboard.html"
 })
-
 
 // Chức năng đăng nhập
 /*

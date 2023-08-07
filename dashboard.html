@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./dashboard.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <!-- Demo CSS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
 </head>
 
 <body>
@@ -67,6 +75,7 @@
                     <li><a href="#" class="nav--link"><i class="fa-solid fa-couch"></i></a></li>
                     <li><a href="#" class="nav--link"><i class="fa-solid fa-utensils"></i></a></li>
                     <li><a href="#" class="nav--link"><i class="fa-solid fa-table-cells"></i></a></li>
+                    <li><a href="#" class="nav--link"><i class="fa-solid fa-user"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -166,7 +175,42 @@
                     <span>Nội dung dashboard</span>
                 </div>
                 <div class="row__body reservation__body">
-                    <span>Nội dung Reservation</span>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Input -->
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Nhập tên khách hàng</label>
+                                        <input type="email" class="form-control" id="custumerName"
+                                            placeholder="Tên khách hàng">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlInput1" class="form-label">Số lượng người tham dự</label>
+                                        <input type="number" class="form-control" id="custumerNumber"
+                                            placeholder="Số lượng khách hàng" max="10" min="0">
+                                    </div>
+                                    <!--------->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="btn--booking">Gửi</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End modal -->
+                    <div class="row" id="booking">
+                        <!-- Add code js -->
+                    </div>
                 </div>
                 <div class="row__body oderFood__body">
                     <span>Nội dung oder food</span>
