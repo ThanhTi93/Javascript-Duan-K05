@@ -236,17 +236,17 @@ function fetchPosts() {
 fetchPosts();
 
 // Thêm mới 
-document.getElementById('btn--booking').addEventListener('click', function(event) {
-    event.preventDefault();
+document.getElementById('btn--booking').addEventListener('click', function() {
+    // event.preventDefault();
   
     const custumerName = document.getElementById('custumerName').value;
-    const custumerNumber = document.getElementById('custumerNumber').value;
+    const quantity = document.getElementById('quantity').value;
   
-    const newPost = {
+    const newTable = {
       custumerName: custumerName,
-      custumerNumber: custumerNumber,
+      quantity: quantity,
     };
-  
+  console.log(custumerName, quantity)
     fetch('http://localhost:3000/tables', {
       method: 'POST',
       headers: {
@@ -257,7 +257,7 @@ document.getElementById('btn--booking').addEventListener('click', function(event
       .then(response => response.json())
       .then(data => {
         custumerName.value = '';
-        custumerNumber.value = '';
+        quantity.value = '';
   
         // Sau khi tạo thành công, làm mới danh sách bài đăng
         fetchPosts();
