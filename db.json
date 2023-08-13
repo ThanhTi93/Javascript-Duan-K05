@@ -1,122 +1,188 @@
 {
   "tables": [
     {
-      "id": 1,
+      "tableID": 1,
+      "custumerName": "duan",
+      "quantity": "3",
       "status": false,
-      "customerName": "",
-      "quantity": 0
+      "id": 1
+    },
+    {
+      "tableID": 2,
+      "custumerName": "Thu Thuỷ",
+      "quantity": "5",
+      "status": false,
+      "id": 2
+    },
+    {
+      "tableID": 3,
+      "custumerName": "Thu Thuỷ",
+      "quantity": "5",
+      "status": false,
+      "id": 3
+    },
+    {
+      "tableID": 4,
+      "custumerName": "xù đệ",
+      "quantity": "5",
+      "status": false,
+      "id": 4
+    },
+    {
+      "tableID": 5,
+      "custumerName": "duan",
+      "quantity": "3",
+      "status": false,
+      "id": 5
+    },
+    {
+      "tableID": 6,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 6
+    },
+    {
+      "tableID": 7,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 7
+    },
+    {
+      "tableID": 8,
+      "custumerName": "duan",
+      "quantity": "4",
+      "status": true,
+      "id": 8
+    },
+    {
+      "tableID": 9,
+      "custumerName": "duan",
+      "quantity": "1",
+      "status": true,
+      "id": 9
+    },
+    {
+      "tableID": 10,
+      "custumerName": "duan",
+      "quantity": "3",
+      "status": true,
+      "id": 10
+    },
+    {
+      "tableID": 11,
+      "custumerName": "thuy",
+      "quantity": "1",
+      "status": true,
+      "id": 11
+    },
+    {
+      "tableID": 12,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 12
+    },
+    {
+      "tableID": 13,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 13
+    },
+    {
+      "tableID": 14,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 14
+    },
+    {
+      "tableID": 15,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 15
+    },
+    {
+      "tableID": 16,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 16
+    },
+    {
+      "tableID": 17,
+      "custumerName": "duan",
+      "quantity": "3",
+      "status": true,
+      "id": 17
+    },
+    {
+      "tableID": 18,
+      "custumerName": "duan",
+      "quantity": "2",
+      "status": true,
+      "id": 18
+    },
+    {
+      "tableID": 19,
+      "custumerName": "",
+      "quantity": "",
+      "status": true,
+      "id": 19
+    },
+    {
+      "custumerName": "Thanh ti",
+      "quantity": "4",
+      "status": true,
+      "id": 20
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "status": true,
+      "foodImage": "./image/food_01.png",
+      "foodName": "Món ăn thứ 1",
+      "quantityFood": 0
     },
     {
       "id": 2,
-      "status": false,
-      "customerName": "",
-      "quantity": 0
+      "status": true,
+      "foodImage": "./image/food_02.png",
+      "foodName": "Món ăn thứ 2",
+      "quantityFood": 0
     },
     {
       "id": 3,
       "status": true,
-      "customerName": "",
-      "quantity": 0
+      "foodImage": "./image/food_03.png",
+      "foodName": "Món ăn thứ 3",
+      "quantityFood": 0
     },
     {
       "id": 4,
       "status": true,
-      "customerName": "",
-      "quantity": 0
+      "foodImage": "./image/food_04.png",
+      "foodName": "Món ăn thứ 4",
+      "quantityFood": 0
     },
     {
       "id": 5,
       "status": true,
-      "customerName": "",
-      "quantity": 0
+      "foodImage": "./image/food_05.png",
+      "foodName": "Món ăn thứ 5",
+      "quantityFood": 0
     },
     {
       "id": 6,
       "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 7,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 8,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 9,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 10,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 11,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 12,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 13,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 14,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 15,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 16,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 17,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "id": 18,
-      "status": true,
-      "customerName": "",
-      "quantity": 0
-    },
-    {
-      "custumerName": "duan",
-      "quantity": "2",
-      "id": 19
-    },
-    {
-      "custumerName": "duan",
-      "quantity": "3",
-      "id": 20
+      "foodImage": "./image/food_06.png",
+      "foodName": "Món ăn thứ 6",
+      "quantityFood": 0
     }
-  ]
+  ],
+  "orders": []
 }

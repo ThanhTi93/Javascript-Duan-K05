@@ -72,43 +72,39 @@ const boxElement = document.querySelectorAll('.row__body');
 
 
 //  Click nav menu to
+// Dùng forEach để duyệt các phần tử trong contentMenuto
 contentMenuTo.forEach((elements, index) => {
     elements.addEventListener('click', () => {
-        //  Hide all box 
         boxElement.forEach((box) => {
             box.style.display = "none";
         })
-        //  Show box theo index
         boxElement[index].style.display = "block";
-
-        // Menu mobile 
+        // menu mobile
         contentMenuMin.forEach((elements, i) => {
-            if (i === index) {
+            if(i === index){
                 elements.classList.add('nav--link--active')
-            } else {
+            }else{
                 elements.classList.remove('nav--link--active')
             }
-        });
-
-        // Menu icon
-        contentMenuNho.forEach((elements, i) => {
-            if (i === index) {
+        })
+          // menu nho
+          contentMenuNho.forEach((elements, i) => {
+            if(i === index){
                 elements.classList.add('nav--link--active')
-            } else {
+            }else{
                 elements.classList.remove('nav--link--active')
             }
-        });
-        // Menu to
-        contentMenuTo.forEach((elements, i) => {
-            if (i === index) {
+        })
+          // menu lon
+          contentMenuTo.forEach((elements, i) => {
+            if(i === index){
                 elements.classList.add('nav--link--active')
-            } else {
+            }else{
                 elements.classList.remove('nav--link--active')
             }
-        });
+        })
     })
-});
-
+})
 // Click menu nhỏ
 contentMenuNho.forEach((elements, index) => {
     elements.addEventListener('click', () => {
@@ -185,16 +181,27 @@ contentMenuMin.forEach((elements, index) => {
     })
 })
 // Lấy dữ liệu từ json
-function fetchPosts() {
+function tablePosts() {
     fetch('http://localhost:3000/tables')
         .then(response => response.json())
         .then(data => {
             const tablesList = document.getElementById('booking');
 
+            const tableSelect = document.getElementById('table--select');
+            const filterOption = data.filter((table,index) => {
+                return table.status == false;
+            })
+            // 2.Hiển thị dữ liệu lấy từ JSON Server
+            filterOption.forEach(table => {
+                const listItemTable = document.createElement('option');
+                 listItemTable.value = table.id;
+                 listItemTable.textContent = ` Bàn ${table.id}`;
+                   tableSelect.appendChild(listItemTable);
+            })
             // Hiển thị dữ liệu lấy từ JSON Server
             data.forEach(table => {
                 const listItem = document.createElement('div');
-                const imageBooking = table.status ? "./image/datBan.png" : "./image/datBan2.png";
+                const imageBooking = table.status ? "./image/datBan2.png" : "./image/datBan.png";
                 const listBtnAddCard = table.status ? "display: none" : "display: flex";
                 const listBtnBooking = table.status ? "display: flex" : "display: none";
 
@@ -221,7 +228,7 @@ function fetchPosts() {
                                 </div>
                                 <div class="bg__btn__booking" style="${listBtnBooking}">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">
+                                    data-bs-target="#staticBackdrop" onclick="clickBooking(${table.id})">
                                         <span class="btn-label"><i class="fa-solid fa-circle-plus"></i></span>Booking
                                     </button>
                                 </div>
@@ -233,34 +240,150 @@ function fetchPosts() {
 }
 
 // Gọi hàm fetchPosts để lấy dữ liệu khi trang web được tải
-fetchPosts();
+tablePosts();
+var id = null;
+function clickBooking(tableID){
+    console.log(tableID);
+     id = tableID;
+};
+// Update
+document.getElementById('btn--booking').addEventListener('click', function () {
 
-// Thêm mới 
-document.getElementById('btn--booking').addEventListener('click', function() {
-    // event.preventDefault();
-  
     const custumerName = document.getElementById('custumerName').value;
     const quantity = document.getElementById('quantity').value;
-  
+
+ 
     const newTable = {
-      custumerName: custumerName,
-      quantity: quantity,
+        tableID: id,
+        custumerName: custumerName,
+        quantity: quantity,
+        status: false
     };
-  console.log(custumerName, quantity)
-    fetch('http://localhost:3000/tables', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newTable),
+    console.log(custumerName, quantity)
+    fetch(`http://localhost:3000/tables/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newTable),
     })
-      .then(response => response.json())
-      .then(data => {
-        custumerName.value = '';
-        quantity.value = '';
-  
-        // Sau khi tạo thành công, làm mới danh sách bài đăng
-        fetchPosts();
-      })
-      .catch(error => console.error('Error creating post:', error));
-  });
+        .then((response) => response.json())
+        .then((data) => {
+             console.log(data);
+           
+        })
+        .catch(error => console.error('Error creating post:', error));
+       
+});
+
+
+// Tăng giản số lượng món
+
+
+// Lấy dữ liệu đổ vào oder food
+
+// 1.Lấy dữ liệu từ json
+function foodPosts() {
+    fetch('http://localhost:3000/foods')
+        .then(response => response.json())
+        .then(data => {
+            const foodList = document.getElementById('oderFood');
+
+            // 2.Hiển thị dữ liệu lấy từ JSON Server
+            data.forEach(food => {
+                // tạo biến
+                const listItem = document.createElement('div');
+                const foodName = food.foodName;
+                const foodImage = food.foodImage;
+// add class
+                listItem.classList.add("col-12");
+                listItem.classList.add("col-sm-6");
+                listItem.classList.add("col-md-4");
+                listItem.classList.add("col-lg-3");
+                listItem.classList.add("dish");
+// in ra html
+                listItem.innerHTML = `       
+                <div class="item__Foods">
+                    <div class="edit__food">
+                        <button type="button" class="btn">
+                            <span class="btn-label"><i class="fa-solid fa-pen-to-square"></i></span>
+                        </button>
+                    </div>
+                    <div class="food__id">
+                        <span data-itemFood-id="">${food.id}</span>
+                    </div>
+                <div class="food__name">
+                    <span>${foodName}</span>
+                </div>
+                <div class="food__image">
+                    <img src="${foodImage}" alt="">
+                </div>
+                <div class="food__number">
+                    <button class="reduce__quantity__food"><span>-</span></button>
+                    <input type="text" name="" class="quantity__food" value="0" readonly>
+                    <button class="add__quantity__food"><span>+</span></button>
+                </div>
+            </div>
+          `;
+          foodList.appendChild(listItem);
+        //   tạo biến tăng giảm số lượng sản phẩm
+          const reducaQuantityFood = listItem.querySelector('.reduce__quantity__food');
+          const addQuantityFood = listItem.querySelector('.add__quantity__food');
+          const quantityFood = listItem.querySelector('.quantity__food');
+        //   action của biến giảm
+          reducaQuantityFood.addEventListener('click', () => {
+            console.log("vào đây");
+            let valueQuantityFood = parseInt(quantityFood.value);
+            if(valueQuantityFood > 0){
+                quantityFood.value = (valueQuantityFood - 1).toString();
+            }
+          });
+        //   action của biến tăng
+          addQuantityFood.addEventListener('click', () => {
+            console.log("vào nut +");
+            let valueQuantityFood = parseInt(quantityFood.value);
+            quantityFood.value = (valueQuantityFood + 1).toString();
+          });
+       
+
+            });
+             //  tạo 1 function để sumbit các món ăn lên data
+        //   function addOrder(){
+        //     const tableId = document.getElementById('tableId');
+        //     const itemFoods = document.querySelectorAll('.item__Foods');
+        //     console.log(tableId);
+        // }
+        // addOrder();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+// Gọi hàm fetchPosts để lấy dữ liệu khi trang web được tải
+
+
+
+
+function clickOption(){
+
+}
+// Tạo biến đếm đơn hàng
+let currenOderId = 1;
+function addOrder(){
+    // const tableIdss = document.getElementById('table--select').value;
+    const itemFoods = document.querySelectorAll('.dish');
+ 
+    // const idRow = document.getElementById('oderFood');
+    console.log(itemFoods);
+    // console.log(itemFoods);
+    // const orderFoodItems = [];
+    // itemFoods.forEach((itemFoods) => {
+    //     const quantity = parseInt(itemFoods.querySelector('.quantity__food').value);
+    //     if(quantity > 0){
+    //         const itemFoodId = itemFoods.getAttribute('data-itemFood-id');
+    //         console.log(itemFoodId);
+    //         console.log('Vào đây')
+    //     }
+    // })
+}
+addOrder();
+foodPosts();

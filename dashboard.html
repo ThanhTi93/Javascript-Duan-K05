@@ -26,6 +26,7 @@
                 <i class="fa-solid fa-bars-progress"></i>
                 <!-- <i class="fa-solid fa-right-long"></i> -->
             </div>
+ 
             <div class="container__logo-dashboard">
                 <p class="logo__dashboard">Sufee <b>Admin</b></p>
             </div>
@@ -175,7 +176,7 @@
                     <span>Nội dung dashboard</span>
                 </div>
                 <div class="row__body reservation__body">
-                    <!-- Modal -->
+                    <!-- Modal edit table -->
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -202,7 +203,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="btn--booking">Gửi</button>
+                                    <button type="button" class="btn btn-primary" id="btn--booking" >Gửi</button>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +214,26 @@
                     </div>
                 </div>
                 <div class="row__body oderFood__body">
-                    <span>Nội dung oder food</span>
+                      <!-- Modal edit food -->
+                      
+                  <!-- End modal -->
+                    <div class="row">
+                        <div class="bg__btn__oderFood">
+                            <form class="form__group__oderFood" id="form-group-oderFood">
+                                <label for="lang-select">Chọn bàn:</label>
+                                <select class="oderFood__select__table" name="lang" id="table--select">
+                                    <option value="" selected disabled>Chọn bàn</option>
+                                    <!-- Đổ dữ liệu option -->
+                                </select>
+                                <button type="submit" onclick="addOrder()">Gửi</button>
+                            </form>
+                        </div>
+                    </div>
+                   <div class="row" id="oderFood">
+                   <!-- Đổ dữ liệu vào oderFood -->
+                            
+                   <!----------------------------->
+                   </div>
                 </div>
                 <div class="row__body payBill__body">
                     <span>Nội dung pay bill</span>
