@@ -144,6 +144,7 @@
     {
       "id": 1,
       "status": true,
+      "foodPrice": 10,
       "foodImage": "./image/food_01.png",
       "foodName": "Món ăn thứ 1",
       "quantityFood": 0
@@ -151,6 +152,7 @@
     {
       "id": 2,
       "status": true,
+      "foodPrice": 12,
       "foodImage": "./image/food_02.png",
       "foodName": "Món ăn thứ 2",
       "quantityFood": 0
@@ -158,6 +160,7 @@
     {
       "id": 3,
       "status": true,
+      "foodPrice": 30,
       "foodImage": "./image/food_03.png",
       "foodName": "Món ăn thứ 3",
       "quantityFood": 0
@@ -165,6 +168,7 @@
     {
       "id": 4,
       "status": true,
+      "foodPrice": 20,
       "foodImage": "./image/food_04.png",
       "foodName": "Món ăn thứ 4",
       "quantityFood": 0
@@ -172,6 +176,7 @@
     {
       "id": 5,
       "status": true,
+      "foodPrice": 15,
       "foodImage": "./image/food_05.png",
       "foodName": "Món ăn thứ 5",
       "quantityFood": 0
@@ -179,10 +184,39 @@
     {
       "id": 6,
       "status": true,
+      "foodPrice": 17,
       "foodImage": "./image/food_06.png",
       "foodName": "Món ăn thứ 6",
       "quantityFood": 0
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "idTable": "1",
+      "items": [
+        {
+          "foodName": "Món ăn thứ 1",
+          "idItemFood": "1",
+          "imageItemFood": "./image/food_01.png",
+          "quantity": 1,
+          "priceItemFood": "10"
+        },
+        {
+          "foodName": "Món ăn thứ 2",
+          "idItemFood": "2",
+          "imageItemFood": "./image/food_02.png",
+          "quantity": 1,
+          "priceItemFood": "12"
+        },
+        {
+          "foodName": "Món ăn thứ 3",
+          "idItemFood": "3",
+          "imageItemFood": "./image/food_03.png",
+          "quantity": 2,
+          "priceItemFood": "30"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

@@ -176,8 +176,45 @@
                     <span>Nội dung dashboard</span>
                 </div>
                 <div class="row__body reservation__body">
+                    <!-- Modal add table Hiện danh sách món ăn được đặt -->
+                    <div class="modal fade" id="listFoodOder" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Danh sách món ăn đã đặt</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Input -->
+                                    <table class="table" >
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">STT</th>
+                                            <th scope="col">Foods</th>
+                                            <th scope="col">Food Name</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Price</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody class="td--list--food--oder">
+                                         <!-- Đổ dữ liệu table order food -->
+                                        </tbody>
+                                      </table>
+                                    <!--------->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="btn--add" >Thanh toán</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End modal -->
                     <!-- Modal edit table -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="bookingTable" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -225,7 +262,7 @@
                                     <option value="" selected disabled>Chọn bàn</option>
                                     <!-- Đổ dữ liệu option -->
                                 </select>
-                                <button type="submit" onclick="addOrder()">Gửi</button>
+                                <button type="submit" onclick="addOrder(event)">Gửi</button>
                             </form>
                         </div>
                     </div>
@@ -239,7 +276,86 @@
                     <span>Nội dung pay bill</span>
                 </div>
                 <div class="row__body info__body">
-                    <span>Nội dung info</span>
+                    <div class="container-xl px-4 mt-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                                <!-- Profile picture card-->
+                                <div class="card mb-4 mb-xl-0">
+                                    <div class="card-header">Profile Picture</div>
+                                    <div class="card-body text-center">
+                                        <!-- Profile picture image-->
+                                        <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                        <!-- Profile picture help block-->
+                                        <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                                        
+
+                                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-8">
+                                <!-- Account details card-->
+                                <div class="card mb-4">
+                                    <div class="card-header">Account Details</div>
+                                    <div class="card-body">
+                                        <form>
+                                            <!-- Form Group (username)-->
+                                            <div class="mb-3">
+                                                <label for="inputUsername">Username (how your name will appear to other users on the site)</label>
+                                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                                            </div>
+                                            <!-- Form Row-->
+                                            <div class="row gx-3 mb-3">
+                                                <!-- Form Group (first name)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputFirstName">First name</label>
+                                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+                                                </div>
+                                                <!-- Form Group (last name)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputLastName">Last name</label>
+                                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+                                                </div>
+                                            </div>
+                                            <!-- Form Row        -->
+                                            <div class="row gx-3 mb-3">
+                                                <!-- Form Group (organization name)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputOrgName">Organization name</label>
+                                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+                                                </div>
+                                                <!-- Form Group (location)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputLocation">Location</label>
+                                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+                                                </div>
+                                            </div>
+                                            <!-- Form Group (email address)-->
+                                            <div class="mb-3">
+                                                <label for="inputEmailAddress">Email address</label>
+                                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                                            </div>
+                                            <!-- Form Row-->
+                                            <div class="row gx-3 mb-3">
+                                                <!-- Form Group (phone number)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputPhone">Phone number</label>
+                                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+                                                </div>
+                                                <!-- Form Group (birthday)-->
+                                                <div class="col-md-6">
+                                                    <label for="inputBirthday">Birthday</label>
+                                                    <input class="form-control" id="inputBirthday" type="date" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+                                                </div>
+                                            </div>
+                                            <!-- Save changes button-->
+                                            <button class="btn btn-primary" type="button">Save changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
