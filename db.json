@@ -10,9 +10,10 @@
     {
       "tableID": 2,
       "custumerName": "Thu Thuỷ",
-      "quantity": "5",
-      "status": false,
-      "id": 2
+      "quantity": 0,
+      "status": true,
+      "id": 2,
+      "customerName": ""
     },
     {
       "tableID": 3,
@@ -146,7 +147,7 @@
       "status": true,
       "foodPrice": 10,
       "foodImage": "./image/food_01.png",
-      "foodName": "Món ăn thứ 1",
+      "foodName": "Stir-fried vegetables",
       "quantityFood": 0
     },
     {
@@ -154,7 +155,7 @@
       "status": true,
       "foodPrice": 12,
       "foodImage": "./image/food_02.png",
-      "foodName": "Món ăn thứ 2",
+      "foodName": "Steak",
       "quantityFood": 0
     },
     {
@@ -162,7 +163,7 @@
       "status": true,
       "foodPrice": 30,
       "foodImage": "./image/food_03.png",
-      "foodName": "Món ăn thứ 3",
+      "foodName": "Potato skewers",
       "quantityFood": 0
     },
     {
@@ -170,7 +171,7 @@
       "status": true,
       "foodPrice": 20,
       "foodImage": "./image/food_04.png",
-      "foodName": "Món ăn thứ 4",
+      "foodName": "Crawl",
       "quantityFood": 0
     },
     {
@@ -178,7 +179,7 @@
       "status": true,
       "foodPrice": 15,
       "foodImage": "./image/food_05.png",
-      "foodName": "Món ăn thứ 5",
+      "foodName": "Fried shrimp",
       "quantityFood": 0
     },
     {
@@ -186,37 +187,61 @@
       "status": true,
       "foodPrice": 17,
       "foodImage": "./image/food_06.png",
-      "foodName": "Món ăn thứ 6",
+      "foodName": "Fuji beef steak",
+      "quantityFood": 0
+    },
+    {
+      "id": 7,
+      "status": true,
+      "foodPrice": 17,
+      "foodImage": "./image/food_07.png",
+      "foodName": "Steamed shrimp",
+      "quantityFood": 0
+    },
+    {
+      "id": 8,
+      "status": true,
+      "foodPrice": 15,
+      "foodImage": "./image/food_08.png",
+      "foodName": "Fizza",
+      "quantityFood": 0
+    },
+    {
+      "id": 9,
+      "status": true,
+      "foodPrice": 30,
+      "foodImage": "./image/food_9.png",
+      "foodName": "Rice noodle",
       "quantityFood": 0
     }
   ],
   "orders": [
     {
-      "idTable": "1",
+      "idTable": "3",
       "items": [
         {
-          "foodName": "Món ăn thứ 1",
+          "foodName": "Stir-fried vegetables",
           "idItemFood": "1",
           "imageItemFood": "./image/food_01.png",
           "quantity": 1,
           "priceItemFood": "10"
         },
         {
-          "foodName": "Món ăn thứ 2",
+          "foodName": "Steak",
           "idItemFood": "2",
           "imageItemFood": "./image/food_02.png",
           "quantity": 1,
           "priceItemFood": "12"
         },
         {
-          "foodName": "Món ăn thứ 3",
+          "foodName": "Potato skewers",
           "idItemFood": "3",
           "imageItemFood": "./image/food_03.png",
           "quantity": 2,
           "priceItemFood": "30"
         }
       ],
-      "id": 1
+      "id": 2
     }
   ]
 }

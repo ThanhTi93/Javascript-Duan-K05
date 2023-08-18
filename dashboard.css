@@ -252,7 +252,16 @@ img {
     display: none;
     z-index: 999;
 }
-
+.author__name{
+    border-bottom: 0.5px solid #555;
+    padding: 5px 0px;
+}
+.author__name span{
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    /* margin: 5px 0px; */
+}
 .author__list__after {
     display: block;
 }
@@ -379,6 +388,7 @@ img {
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     position: relative;
+    /* background-color: #555; */
 }
 .bg__btn__booking{
     margin-top: 10px;
@@ -530,8 +540,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+}
+.price {
     color: var(--mainColor);
+    font-size: 1.5rem;
 }
 .td__food__image{
     height: 50px;
@@ -588,3 +600,27 @@ img {
 }
 
 /* End infor */
+table {
+    width: 100%; /* Đảm bảo bảng chiếm hết chiều rộng của vùng chứa */
+    border-collapse: collapse; /* Gộp các đường viền của ô cùng nhau */
+  }
+  
+  td {
+    text-align: center; /* Căn giữa ngang */
+    vertical-align: middle; /* Căn giữa dọc */
+    border: 1px solid black; /* Tạo đường viền cho ô (tuỳ chọn) */
+    padding: 10px; /* Khoảng cách bên trong ô (tuỳ chọn) */
+  }
+  th {
+    text-align: center !important; /* Căn giữa ngang */
+    vertical-align: middle; /* Căn giữa dọc */
+    border: 1px solid black; /* Tạo đường viền cho ô (tuỳ chọn) */
+    padding: 10px; /* Khoảng cách bên trong ô (tuỳ chọn) */
+  }
+  canvas{
+    background-color: #F1F2F7;
+  }
+  .linkDashboard{
+    font-size: 1.3rem;
+    color: #B13A42;
+  }
